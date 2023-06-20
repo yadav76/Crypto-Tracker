@@ -7,9 +7,10 @@ import { createTheme } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 import Grid from '../Grid';
 import './styles.css'
+import List from '../List'
 
 export default function TabsComponent({ coins }) {
-    const [value, setValue] = useState('1');
+    const [value, setValue] = useState('grid');
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -53,13 +54,13 @@ export default function TabsComponent({ coins }) {
                     </div>
                 </TabPanel>
                 <TabPanel value="list">
-                    <div>
+                    <table className='list-table'>
                         {coins.map((coin, index) => {
                             return (
-                                <p key={index + 1}>{index + 1}.{coin.id}</p>
+                                <List coin={coin} />
                             );
                         })};
-                    </div>
+                    </table>
                 </TabPanel>
             </TabContext>
         </ThemeProvider>
