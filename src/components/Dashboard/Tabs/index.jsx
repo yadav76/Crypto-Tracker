@@ -49,8 +49,8 @@ export default function TabsComponent({ coins }) {
                         {coins.map((coin, index) => {
                             return (
                                 <Grid coin={coin} key={index} />
-                            );
-                        })};
+                            )
+                        })}
                     </div>
                 </TabPanel>
                 <TabPanel value="list">
@@ -58,8 +58,8 @@ export default function TabsComponent({ coins }) {
                         {coins.map((coin, index) => {
                             return (
                                 <List coin={coin} />
-                            );
-                        })};
+                            )
+                        })}
                     </table>
                 </TabPanel>
             </TabContext>

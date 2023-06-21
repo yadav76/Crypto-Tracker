@@ -10,6 +10,10 @@
   --red: #f94141;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -52,3 +56,13 @@ img {
   -moz-user-drag: none;
   -o-user-drag: none;
   }
+
+/* Coin Data page for a Clicking on Particular Coin */
+.grey-wrapper{
+  display: block;
+  width: 90%;
+  background-color: var(--darkgrey);
+  margin: 1.5rem auto;
+  border-radius: 0.8rem;
+  padding: 0 1rem;
+}
