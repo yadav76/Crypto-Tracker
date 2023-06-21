@@ -15,6 +15,24 @@ function LineChart({ chartData, priceType, multiAxis }) {
             mode: "index",
             intersect: false,
         },
+        scales: {
+            y: {
+                type: "linear",
+                display: true,
+                position: "left",
+                ticks: {
+                    callback: function (value) {
+                        if (priceType == "total_volumes") {
+                            return "$" + convertNumbers(value);
+                        } else if (priceType == "market_caps") {
+                            return "$" + convertNumbers(value);
+                        } else {
+                            return "$" + value.toLocaleString();
+                        }
+                    },
+                },
+            },
+        }
     };
 
     return <Line data={chartData} options={options} />;
