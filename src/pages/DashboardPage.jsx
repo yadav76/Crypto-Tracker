@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../components/Common/Header';
 import TabsComponent from '../components/Dashboard/Tabs';
-import axios from "axios";
 import Search from '../components/Dashboard/Search';
 import PaginationComponent from '../components/Dashboard/Pagination';
 import Loader from '../components/Common/Loader';
 import BackToTop from '../components/Common/BackToTop';
+import { get100Coins } from '../functions/get100Coins';
+
 
 function DashboardPage() {
 
@@ -38,19 +39,23 @@ function DashboardPage() {
     // url : https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en
 
     useEffect(() => {
-        axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en')
-            .then((res) => {
-                // console.log(res);
-                setCoins(res.data);
-                setPaginatedCoins(res.data.slice(0, 10));  // by default show 10 coins on Dashboard
-
-                // as soon as I get data from API I set my Loader to false 
-                setIsLoading(false);
-            }).catch(err => {
-                console.log(err);
-                setIsLoading(false);
-            })
+        // call getData function to get100Coins
+        getData();
     }, [])
+
+    // Now call get100Coins() to get coins
+
+    const getData = async () => {
+        const myCoins = await get100Coins();
+
+        if (myCoins) {
+            setCoins(myCoins);
+            setPaginatedCoins(myCoins.slice(0, 10));  // by default show 10 coins on Dashboard
+
+            // as soon as I get data from API I set my Loader to false 
+            setIsLoading(false);
+        }
+    }
     return (
         <>
             <BackToTop />

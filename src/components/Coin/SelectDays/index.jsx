@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import './styles.css'
 
-export default function SelectDays({ days, handleDaysChange }) {
+export default function SelectDays({ days, handleDaysChange, pTag }) {
 
     return (
         <div className='select-days' >
-            <p>Price Change In</p>
+            {pTag && <p>Price Change In</p>}
             <Select
                 sx={{
                     height: "2.5rem",

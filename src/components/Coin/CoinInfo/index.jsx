@@ -12,7 +12,7 @@ function CoinInfo({ heading, desc }) {
     const [flag, setFlag] = useState(false);
 
     return (
-        <div className='grey-wrapper'>
+        <div className='grey-wrapper' style={{ padding: "0 1rem" }}>
             <h2 className='coin-info-heading'>{heading}</h2>
             {desc.length > 350 ? (
                 <p onClick={() => setFlag(!flag)} className='coin-info-desc' dangerouslySetInnerHTML={{ __html: !flag ? shortDesc : longDesc }}></p>

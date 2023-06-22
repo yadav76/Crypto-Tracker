@@ -2,7 +2,9 @@ import axios from "axios"
 
 export const getCoinData = (id) => {
     const coinData = axios
-        .get(`https://api.coingecko.com/api/v3/coins/${id}`)
+        .get(`https://api.coingecko.com/api/v3/coins/${id}`,
+            { crossDomain: true }
+        )
         .then((response) => {
             return response.data;
         })

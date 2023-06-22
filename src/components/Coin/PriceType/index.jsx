@@ -13,7 +13,7 @@ export default function TogglePriceType({ priceType, handlePriceTypeChange }) {
                 onChange={handlePriceTypeChange}
                 aria-label="text alignment"
                 sx={{
-                    "&.Mui-selected": {
+                    "& .Mui-selected": {
                         color: "var(--blue) !important",
                     },
                     borderColor: "var(--blue)",
