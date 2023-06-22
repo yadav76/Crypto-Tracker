@@ -82,22 +82,21 @@ function ComparePage() {
 
             //Now strip coinData into small Data
             coinObject(setCrypto2Data, data);
-
-            const prices1 = await getCoinPrices(e.target.value, days, priceType);
-            const prices2 = await getCoinPrices(coin2, days, priceType);
-            settingChartData(setChartData, prices1, data1, coin2Data, prices2);
         } else {
             setCrypto1(event.target.value);
             const data = await getCoinData(event.target.value);
 
             //Now strip coinData into small Data
             coinObject(setCrypto1Data, data);
-            const prices1 = await getCoinPrices(e.target.value, days, priceType);
-            const prices2 = await getCoinPrices(coin2, days, priceType);
-            settingChartData(setChartData, prices1, data1, coin2Data, prices2);
         }
 
-        setIsLoading(false);
+        const prices1 = await getCoinPrices(crypto1, days, priceType)
+        const prices2 = await getCoinPrices(crypto2, days, priceType)
+
+        if (prices1.length > 0 && prices2.length > 0) {
+            console.log("BOTH PRICES FETCHED", prices1, prices2);
+            setIsLoading(false);
+        }
     }
 
     // add toggle option for chnging the chart for prices, market_cap & total_volume
