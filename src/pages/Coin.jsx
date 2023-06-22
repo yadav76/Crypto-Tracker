@@ -14,7 +14,7 @@ import BackToTop from '../components/Common/BackToTop'
 import SelectDays from '../components/Coin/SelectDays';
 import { settingChartData } from '../functions/settingChartData';
 import TogglePriceType from '../components/Coin/PriceType';
-
+import Footer from '../components/Common/Footer';
 
 function CoinPage() {
     // Here whatever I write in a URL from App.js in Coin Component that will be Destructured here as [id] from useParams() object.
@@ -107,6 +107,7 @@ function CoinPage() {
                     <CoinInfo heading={coinData.name} desc={coinData.desc} />
                 </>
             )}
+            <Footer />
         </div>
     )
 }
