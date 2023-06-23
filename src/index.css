@@ -73,3 +73,23 @@ img {
   align-items: center;
   gap: 2rem;
 }
+
+.light-mode{
+  --white: #fff;
+  --black: #111;
+  --blue: #3a80e9;
+  --gray: #888;
+  --darkgrey: #1b1b1b;
+  --green: #61c96f;
+  --red: #f94141;
+}
+
+.dark-mode{
+  --white: #111;
+  --black: #fff;
+  --blue: #3a80e9;
+  --gray: #888;
+  --darkgrey: #1b1b1b;
+  --green: #61c96f;
+  --red: #f94141;
+}
