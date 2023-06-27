@@ -8,8 +8,6 @@ import Button from '../Button';
 export default function TemporaryDrawer() {
     const [open, setOpen] = useState(false);
 
-
-
     return (
         <div>
 
@@ -28,9 +26,6 @@ export default function TemporaryDrawer() {
                     <Link to="/compare">
                         <p className='link'>Compare</p>
                     </Link>
-                    <Link to="/watchlist">
-                        <p className='link'>Watchlist</p>
-                    </Link>
                     <Link to="/dashboard">
                         <p className='link'>Dashboard</p>
                     </Link>
@@ -40,3 +35,5 @@ export default function TemporaryDrawer() {
         </div>
     );
 }
+
+// <Link to="/watchlist"><p className='link'>Watchlist</p></Link>
